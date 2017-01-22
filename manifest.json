@@ -1,0 +1,18 @@
+{
+    "name": "PaPa Js",
+    "version": "0.1.0.0",
+    "permissions": ["cookies", "storage", "http://*/*", "https://*/*"],
+    "content_scripts": [{
+        "matches": [
+            "*://*/*"
+        ],
+        "js": [
+            "lib/jquery-2.1.1.js",
+            "runner.js"
+        ],
+        "run_at": "document_end"
+    }],
+    "manifest_version": 2,
+    "content_security_policy": "default-src 'self'; connect-src chrome: http: https:; script-src 'self'; style-src * blob: data: filesystem: 'unsafe-inline'; img-src * blob: data: filesystem:; frame-src * blob: data: filesystem:; font-src * blob: data: filesystem:; media-src *;",
+    "offline_enabled": true
+}
